@@ -17,12 +17,17 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sleep 30
+        isUnix()
       }
     }
     stage('Stage') {
       steps {
         writeFile(file: 'Test.txt', text: 'First Test in Morning')
+      }
+    }
+    stage('Deploy') {
+      steps {
+        archiveArtifacts '*.txt'
       }
     }
   }
