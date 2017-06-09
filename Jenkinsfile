@@ -23,6 +23,8 @@ pipeline {
     stage('Stage') {
       steps {
         writeFile(file: 'Test.txt', text: 'First Test in Morning')
+        fileExists 'READ.txt'
+        build(job: 'MyPipeline', quietPeriod: 2, wait: true)
       }
     }
     stage('Deploy') {
