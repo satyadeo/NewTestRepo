@@ -24,8 +24,8 @@ resource "aws_instance" "mysecondec2" {
   ami           = "ami-0231217be14a6f3ba"
   instance_type = "t2.micro"
   tags = {
-  //  Name = "ExampleAppServerInstance"
-      Name = var.instance_name
+        Name = "ExampleAppServerInstance"
+  //    Name = var.instance_name
   }
 
 }
